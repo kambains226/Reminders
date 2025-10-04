@@ -3,7 +3,6 @@ import time
 import uuid
 from colorama import Fore,Style
 from firebase import db 
-from tabulate import tabulate 
 
 
 

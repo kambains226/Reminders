@@ -6,7 +6,6 @@ from firebase import db
 import argparse
 
 from reminder import Reminder
-import sys 
 
 
 if __name__== "__main__":
