@@ -3,8 +3,10 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 import datetime 
-
-cred=credentials.Certificate('serviceAccount.json')
+import os 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+cred_path = os.path.join(base_dir, "serviceAccount.json")
+cred=credentials.Certificate(cred_path)
 
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
