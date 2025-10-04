@@ -7,7 +7,7 @@ It stores your to-dos in Firebase Firestore, so they sync automatically between 
 
 Add, list, delete, and complete tasks directly from the terminal.
 
-Colorful, clean CLI interface (using olorama).
+Colorful, clean CLI interface (using colorama).
 
 Firebase Firestore integration for cloud storage & sync.
 
