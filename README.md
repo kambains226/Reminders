@@ -26,6 +26,7 @@ Each task includes:
   "due": "2025-10-04 21:30"
 }
 ```
+Commands
 ```
 python main.py list
 python main.py create "Buy groceries"
