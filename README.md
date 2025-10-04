@@ -18,31 +18,33 @@ Can be accessed remotely with SSH + Tailscale.
 When you create a task, it’s stored both locally (in memory) and in Firebase Firestore.
 
 Each task includes:
-
+```
 {
   "task": "Finish Firebase CLI",
   "done": false,
   "created_at": "2025-10-04T14:00:00",
   "due": "2025-10-04 21:30"
 }
-
+```
+```
 python main.py list
 python main.py create "Buy groceries"
 python main.py delete <task_name>
 python main.py complete <task_name>
 python main.py clear
-
+```
 ⚙️ Setup
 1️⃣ Clone the repo
+```
 git clone https://github.com/kambains226/Reminders.git
 cd Reminders
-
+```
 
 
 2️⃣ Install Dependencies
-
+```
 pip install firebase-admin  colorama tabulate
-
+```
 
 🔑 Firebase Setup
 1️⃣ Create a Firebase project
@@ -56,7 +58,7 @@ In your project:
 Project Settings → Service Accounts → Generate New Private Key
 
 Download the .json file and rename it (serviceAccount.json).
-
+```
 3️⃣ Add it to your project root
 /project-folder
   ├── firebase.py
@@ -64,4 +66,4 @@ Download the .json file and rename it (serviceAccount.json).
   ├── tasks.py
   ├── serviceAccount.json   ← 🔒 Your private key
 
-  
+  ```
