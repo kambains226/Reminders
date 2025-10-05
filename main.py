@@ -21,7 +21,15 @@ if __name__== "__main__":
     args = parser.parse_args()
 
     if args.command == "list":
-        task.read_tasks()
+        if args.arg:
+
+
+            task_name = " ".join(args.arg)if args.arg else None
+            if(task_name):
+                task.read_tasks(task_name)
+            else:
+
+                task.read_tasks()
 
     elif args.command == "create":
         task_name = " ".join(args.arg) if args.arg else None

@@ -35,10 +35,12 @@ class Reminder:
 
     def create_task(self,task: str,  done: bool = False, category: str = "None"):
         due = input(f"When is ${task} due e.g.(2025-10-04 14:30):\n" )
+
+
+
         id= str(uuid.uuid4())
         doc_ref = self.docs.document(id)
 
-        date_obj = datetime.strptime(due, "%Y-%m-%d %H:%M")
         doc_ref.set({"Name": task, "done": False, "date": datetime.now(),"due":due})
         
  
@@ -49,13 +51,16 @@ class Reminder:
         #gets the task and the due date 
         task_info={}
         complete ={}
+        task_id={}
         for task in tasks:
             task_info[task.to_dict()["Name"]]=task.to_dict()["due"]
+            task_id[task.to_dict()["Name"]]=task.id
             complete[task.to_dict()["Name"]]=task.to_dict()["done"]
 
             # if task_name =="clear":
                     # self.docs.document(task.id).delte()
                     # return 
+        print(complete)
 
         if task_name !="":
 
@@ -66,14 +71,13 @@ class Reminder:
 
                 print(f"{Fore.CYAN}📝 Task:{Style.RESET_ALL} {Fore.WHITE}{task_name}{Style.RESET_ALL}")
                 self.get_hour_mins(task_info[task_name])
-                # print(f"{Fore.YELLOW}Due:{Style.RESET_ALL} {task_info[task_name]}")
                 print(f"{Fore.CYAN}📝 Complete:{Style.RESET_ALL} {Fore.WHITE}{complete[task_name]}{Style.RESET_ALL}")
-                self.get_hour_mins(task.to_dict()["due"])
             if mode =="delete":
                 self.docs.document(task.id).delete()
                 print("task completed ")
             if mode =="comp":
-                self.comp_task(self.docs.document(task.id))
+
+                self.comp_task(self.docs.document(task_id[task_name]))
        
         else:
 
