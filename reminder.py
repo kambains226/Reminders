@@ -23,7 +23,7 @@ class Reminder:
         mins =  int(total_seconds %3600)//60
 
         if hours >24:
-            print(f"{Fore.YELLOW}Due:{Style.RESET_ALL} {date}")
+            print(f"{Fore.YELLOW}Due:{Style.RESET_ALL} {diff.days} days ")
         elif hours ==0: 
             print(f"{Fore.YELLOW}Due:{Style.RESET_ALL}  {mins} minutes ")
 
