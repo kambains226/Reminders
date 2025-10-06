@@ -60,7 +60,6 @@ class Reminder:
             # if task_name =="clear":
                     # self.docs.document(task.id).delte()
                     # return 
-        print(complete)
 
         if task_name !="":
 
