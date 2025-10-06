@@ -19,7 +19,6 @@ if __name__== "__main__":
     parser.add_argument("command", help="Command to run (list, create, delete, complete, clear)")
     parser.add_argument("arg", nargs="*", help="Task Name")
     args = parser.parse_args()
-    print(args.command)
 
     if args.command == "list":
         if args.arg:

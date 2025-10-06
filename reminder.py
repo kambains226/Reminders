@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime,timedelta,date
 import time
 import uuid
 from colorama import Fore,Style
@@ -34,8 +34,20 @@ class Reminder:
 
 
     def create_task(self,task: str,  done: bool = False, category: str = "None"):
-        due = input(f"When is ${task} due e.g.(2025-10-04 14:30):\n" )
+        
+        days  = int(input("how many days is this due: "))
+        time = input("And at what time e.g.(14:30): ")
 
+
+        today= date.today()
+
+        
+        # print(datetime.strptime(str(now),"%Y-%m-%d"),"ch")
+        dayDue = today+ timedelta(days=days)
+        due = str(dayDue)+" " +time 
+        # due = input(f"When is ${task} due e.g.(2025-10-04 14:30):\n" )
+
+        
 
 
         id= str(uuid.uuid4())
@@ -101,9 +113,6 @@ class Reminder:
         self.docs
     def comp_task(self,ref):
         ref.update({"done":True})
-
-    # def sk(self,ref):
-        # ref.update({})
 
 
        
