@@ -72,7 +72,7 @@ class Reminder:
                 self.get_hour_mins(task_info[task_name])
                 print(f"{Fore.CYAN}📝 Complete:{Style.RESET_ALL} {Fore.WHITE}{complete[task_name]}{Style.RESET_ALL}")
             if mode =="delete":
-                self.docs.document(task.id).delete()
+                self.docs.document(task_id[task_name]).delete()
                 print("task completed ")
             if mode =="comp":
 
