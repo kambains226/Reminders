@@ -40,7 +40,7 @@ if __name__== "__main__":
         else:
             print("Please provide a task name.")
             
-    elif args.command == "delete":
+    elif args.command == "delete" or args.command =="complete":
         task_id = " ".join(args.arg)
         task.read_tasks(task_id, mode="delete")
 
